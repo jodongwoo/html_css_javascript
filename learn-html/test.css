@@ -1,0 +1,272 @@
+li:active,
+li {
+  list-style: none;
+  border: 1px solid #e2e2e2;
+  border-bottom: none;
+  padding: 10px;
+  width: 500px;
+}
+
+p {
+  margin: 0;
+}
+
+.list-wrap {
+  margin: auto;
+  box-sizing: border-box;
+}
+
+ul {
+  padding-left: 0;
+  margin: auto;
+  width: 500px;
+}
+
+ul li:nth-child(3) {
+  border-bottom: 1px solid #e2e2e2;
+}
+
+li:active {
+  background-color: rgb(217, 0, 255);
+  color: white;
+}
+
+.alert-wrap {
+  padding: 30px;
+}
+
+.alert-box-blue {
+  box-sizing: border-box;
+  padding: 10px 20px 12px 20px;
+  margin-top: 20px;
+  background-color: #dbe0ff;
+  border-radius: 7px;
+  color: #001d90;
+  border: 1px solid #b2b6cf;
+  font-size: 14px;
+}
+
+.alert-box-green {
+  box-sizing: border-box;
+  padding: 10px 20px 12px 20px;
+  margin-top: 20px;
+  background-color: #d6ffdd;
+  border-radius: 7px;
+  color: #00901a;
+  border: 1px solid #afd1b5;
+  font-size: 14px;
+}
+
+.alert-box-yellow {
+  box-sizing: border-box;
+  padding: 10px 20px 12px 20px;
+  margin-top: 20px;
+  background-color: #fbffc4;
+  border-radius: 7px;
+  color: #727600;
+  border: 1px solid #d9dbbe;
+  font-size: 14px;
+}
+
+.row {
+  display: flex;
+}
+
+.col-6 {
+  float: left;
+  width: 50%;
+  margin: 2px;
+  text-align: center;
+  background-color: #e0e0e0;
+  border: 1px solid #969696;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.col-4 {
+  float: left;
+  width: 33.333%;
+  margin: 2px;
+  text-align: center;
+  background-color: #e0e0e0;
+  border: 1px solid #969696;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.col-3 {
+  float: left;
+  width: 25%;
+  margin: 2px;
+  text-align: center;
+  background-color: #e0e0e0;
+  border: 1px solid #969696;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.col-2 {
+  float: left;
+  width: 16.6666666667%;
+  margin: 2px;
+  text-align: center;
+  background-color: #e0e0e0;
+  border: 1px solid #969696;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.video-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  position: relative;
+}
+
+.video-box h1 {
+  color: white;
+  font-size: 50px;
+}
+
+.video-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+body {
+  margin: 0;
+  position: relative;
+}
+
+.bt-box {
+  margin: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.bt-box button {
+  padding: 20px;
+  width: 250px;
+  color: white;
+  background-color: rgb(86, 125, 243);
+  border: 0;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.bt-box button:hover {
+  animation-name: bt-ani;
+  animation-duration: 0.3s;
+  animation-iteration-count: 2;
+}
+
+@keyframes bt-ani {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.bt-x {
+  margin: 150px auto;
+  text-align: center;
+  font-size: 100px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.bt-x:hover {
+  animation-name: ani-h1;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ani-h1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-50deg);
+  }
+  100% {
+    transform: rotate(45deg) scale(190%);
+  }
+}
+.side-menu {
+  color: white;
+  overflow: hidden;
+}
+
+.side-menu-wrap {
+  position: absolute;
+  top: 0px;
+  left: -300px;
+  padding: 30px;
+  width: 400px;
+  height: 100vh;
+  background-color: black;
+  text-align: right;
+  font-size: 30px;
+}
+.side-menu-wrap span {
+  position: absolute;
+  left: 0px;
+}
+
+.side-menu-wrap:hover {
+  animation-name: ani-box;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.side-menu-wrap:hover p {
+  animation-name: ani-p;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.side-menu-wrap:hover span {
+  animation-name: ani-span;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ani-box {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(300px);
+  }
+}
+@keyframes ani-p {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-40%);
+  }
+}
+@keyframes ani-span {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(250px) skew(-30deg);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+} /*# sourceMappingURL=test.css.map */

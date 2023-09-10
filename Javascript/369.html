@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(93, 93, 93);
+      width: 100%;
+      height: 100vh;
+    }
+
+    .mss {
+      width: 162px;
+      height: 30px;
+      display: flex;
+      justify-content: left;
+    }
+    h4 {
+      color: white;
+      margin: 0;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h4>369 Game</h4>
+      <form action="">
+        <input id="inputNumber" type="text" />
+      </form>
+      <div
+        class="mss"
+        style="height: 30px; display: flex; justify-content: left"
+      >
+        <p id="answer" style="color: white"></p>
+      </div>
+      <div style="width: 250px; margin-top: 50px">
+        <h4 style="text-align: center">공인중개사 1차 시험 합격확인</h4>
+        <form id="test" style="width: 200px; margin: auto" action="">
+          <input
+            id="testPoint1"
+            style="display: block; margin: 5px 0"
+            type="text"
+            placeholder="개론"
+          />
+          <input
+            id="testPoint2"
+            style="display: block; margin: 5px 0"
+            type="text"
+            placeholder="민법"
+          />
+        </form>
+        <p
+          id="testPassAnswer"
+          style="color: rgb(255, 0, 0); background-color: yellow"
+        ></p>
+      </div>
+    </div>
+    <script>
+      document.getElementById('test').addEventListener('input', function () {
+        if (
+          document.getElementById('testPoint1').value >= 60 &&
+          document.getElementById('testPoint2').value >= 60
+        ) {
+          document.getElementById('testPassAnswer').innerHTML = '합격입니다!!!';
+        }
+        if (
+          document.getElementById('testPoint1').value <= 40 ||
+          document.getElementById('testPoint2').value <= 40
+        ) {
+          document.getElementById('testPassAnswer').innerHTML =
+            '죄송합니다. 불합격입니다. ㅠ_ㅠ';
+        }
+        if (
+          document.getElementById('testPoint1').value > 100 ||
+          document.getElementById('testPoint2').value > 100
+        ) {
+          document.getElementById('testPoint1').value = null;
+          document.getElementById('testPoint2').value = null;
+          document.getElementById('testPassAnswer').innerHTML =
+            '입력된 점수는 100 보다 클 수 없습니다.';
+          alert('장난치지 마라!!');
+        }
+      });
+
+      document
+        .getElementById('inputNumber')
+        .addEventListener('input', function () {
+          if (document.getElementById('inputNumber').value % 3 == 0) {
+            document.getElementById('answer').innerHTML = '박수!!';
+          } else if (document.getElementById('inputNumber').value % 9 == 0) {
+            document.getElementById('answer').innerHTML = '박수 X 2 !!';
+          } else if (document.getElementById('inputNumber').value % 3 !== 0) {
+            document.getElementById('answer').innerHTML = '패스패스!!';
+          }
+          if (document.getElementById('inputNumber').value == '') {
+            document.getElementById('answer').innerHTML = null;
+          }
+          // else {
+          //   document.getElementById('answer').innerHTML = '';
+          // }
+        });
+
+      // document
+      //   .getElementById('inputNumber')
+      //   .addEventListener('input', function () {
+      //     if (document.getElementById('inputNumber').value % 9 == 0) {
+      //       document.getElementById('answer').innerHTML = '박수 X 2 !!';
+      //     } else if (document.getElementById('inputNumber').value == null) {
+      //       document.getElementById('answer').innerHTML = '';
+      //     } else {
+      //       document.getElementById('answer').innerHTML = '';
+      //     }
+      //   });
+
+      var age = 48;
+      const area = 'San Diego, CA';
+
+      let name = 'kim';
+      name = 'park';
+      console.log(name);
+    </script>
+  </body>
+</html>

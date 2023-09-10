@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .flip-outer {
+      width: 200px;
+      height: 200px;
+    }
+    .flip-inner {
+      width: 100%;
+      height: 100%;
+      transition: all 1s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-inner:hover {
+      transform: rotateY(180deg);
+    }
+
+    h3 {
+      display: block;
+      font-size: 1.17em;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-weight: bold;
+    }
+
+    p {
+      display: block;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+    }
+
+    .front {
+      width: 200px;
+      height: 200px;
+      backface-visibility: hidden;
+      position: absolute;
+      z-index: 1;
+    }
+    .back {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      text-align: center;
+      box-sizing: border-box;
+      position: absolute;
+      background-color: #faae1c;
+      transform: rotateY(180deg);
+    }
+
+    .back {
+      width: 200px;
+    }
+  </style>
+  <body>
+    <div class="flip-outer">
+      <div class="flip-inner">
+        <img src="img/profile.png" class="front" />
+        <div class="back">
+          <h3>조동우</h3>
+          <p>Frontend Developer</p>
+        </div>
+      </div>
+    </div>
+    <div class="back2">
+      <h3>조동우</h3>
+      <p>Frontend Developer Frontend Developer Frontend Developer</p>
+    </div>
+  </body>
+</html>

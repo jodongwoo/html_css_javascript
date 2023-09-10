@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .main-background {
+        padding: 0.1px;
+        text-align: center;
+        line-height: 20px;
+        width: 100%;
+        height: 40vh;
+        background-image: url(./img/shoes.jpg);
+        background-size: cover;
+      }
+      .header-text {
+        position: relative;
+      }
+      .header-text h4 {
+        color: white;
+        font-size: 30px;
+      }
+
+      .header-text > p {
+        position: relative;
+        width: 60%;
+        color: white;
+        font-size: 16px;
+        margin: auto;
+      }
+      .header-button {
+        width: 200px;
+        position: relative;
+        top: 50px;
+        font-size: 20px;
+        background-color: rgb(255, 213, 0);
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+      }
+      .header-box {
+        text-align: center;
+        position: relative;
+        margin: auto;
+        top: -50px;
+        padding: 20px;
+        width: 500px;
+        background-color: antiquewhite;
+      }
+      .header-box p {
+        color: black;
+      }
+
+      .form-background {
+        padding: 20px;
+        background-color: black;
+      }
+      .form-box {
+        border-radius: 15px;
+        padding: 20px;
+        width: 500px;
+        background-color: white;
+        margin: auto;
+      }
+      .form-input {
+        position: relative;
+        padding: 15px;
+        width: 100%;
+        max-width: 500px;
+        top: -10px;
+        border-radius: 5px;
+        border: 1px solid #263796;
+        box-sizing: border-box;
+      }
+      .textarea {
+        box-sizing: border-box;
+      }
+      .w-50 {
+        width: 50%;
+        float: left;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .w-100 {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .nav-container {
+        display: flex;
+        align-items: center;
+        background-color: coral;
+        height: 100px;
+      }
+      .nav-item {
+        font-size: 20px;
+        color: aliceblue;
+        font-weight: bolder;
+        /* border: 1px solid #000; */
+      }
+
+      .nav-menu li {
+        list-style-type: none;
+        display: inline;
+        /* float: left; */
+        margin-left: 30px;
+        text-align: right;
+      }
+      .nav-item ul {
+        /* display: flex; */
+        /* justify-content: end; */
+      }
+
+      .services-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100vw;
+        margin-bottom: 100px;
+      }
+      .services-list-item {
+        text-align: center;
+        width: 150px;
+        margin: 20px;
+      }
+      @media screen and (max-width: 768px) {
+        .services-list {
+          display: flex;
+          justify-content: center;
+          margin: auto;
+          flex-wrap: wrap;
+          width: 500px;
+          margin-bottom: 100px;
+        }
+        .services-list-item {
+          width: 200px;
+          margin: 10px;
+        }
+      }
+
+      @media screen and (max-width: 576px) {
+        .services-list {
+          margin: auto;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          width: 200px;
+          margin-bottom: 100px;
+        }
+        .services-list-item {
+          width: 200px;
+          margin: 10px;
+        }
+      }
+      .services-list-item i {
+        background-color: #969aae;
+        color: white;
+        padding: 20px;
+        border-radius: 15px;
+        margin-top: 20px;
+      }
+      .services-list h4 {
+        line-height: 0%;
+      }
+      .services-list p {
+        line-height: 0%;
+      }
+
+      .products-bg {
+        background-color: #eee;
+        padding: 15px;
+      }
+      .products-container {
+        display: flex;
+        margin: auto;
+        width: 80%;
+      }
+      .product-item {
+        position: relative;
+        margin: 15px;
+        /* padding: 15px; */
+      }
+      .product-item img {
+        width: 100%;
+        display: block;
+      }
+
+      .product-hover-wrap {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .product-hover-wrap:hover .product-hover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        transition: all 1s;
+      }
+      .product-hover {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.744);
+        top: 100%;
+      }
+      .product-hover span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        font-weight: 900;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav-container">
+      <div class="nav-item" style="flex-grow: 1"></div>
+      <div class="nav-item" style="flex-grow: 1">LOGO</div>
+      <div class="nav-item" style="flex-grow: 15"></div>
+      <div class="nav-item" style="flex-grow: 1">
+        <ul class="nav-menu">
+          <li>Home</li>
+          <li>Products</li>
+          <li>Services</li>
+          <li>Contact Us</li>
+        </ul>
+        <div style="clear: both"></div>
+      </div>
+      <div class="nav-item" style="flex-grow: 1"></div>
+    </div>
+    <div class="main-background">
+      <div class="header-text">
+        <h4>Welcome!!!</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nemo
+          facere labore temporibus. Facere consequatur nostrum voluptates minus
+          natus delectus odio repellat blanditiis cumque numquam inventore
+          architecto dolorum, voluptas ipsamrem ipsum dolor sit amet consectetur
+          .
+        </p>
+        <button class="header-button">Buy Now</button>
+      </div>
+    </div>
+    <div class="header-box">
+      <h5>How we design our shoes</h5>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus non,
+        modi ad excepturi impedit et saepe consequuntur. Tempore adipisci
+        voluptatum ex fuga, deserunt, neque eius explicabo cumque esse facilis
+        minima!
+      </p>
+    </div>
+
+    <!---반응형-->
+
+    <div class="services-list">
+      <div class="services-list-item">
+        <i class="fa-solid fa-cart-shopping fa-2x"></i>
+        <h4>Fast Shiping</h4>
+        <p>Lorem ipsum</p>
+      </div>
+      <div class="services-list-item">
+        <i class="fa-solid fa-bell-concierge fa-2x"></i>
+        <h4>Good Service</h4>
+        <p>Lorem ipsum</p>
+      </div>
+      <div class="services-list-item">
+        <i class="fa-solid fa-money-bill fa-2x"></i>
+        <h4>Free Coupons</h4>
+        <p>Lorem ipsum</p>
+      </div>
+      <div class="services-list-item">
+        <i class="fa-solid fa-shirt fa-2x"></i>
+        <h4>New Products</h4>
+        <p>Lorem ipsum</p>
+      </div>
+    </div>
+
+    <!---반응형-->
+
+    <div style="text-align: center; margin: 30px 0">
+      <progress value="0.5"></progress>
+    </div>
+    <div style="text-align: center; margin: 0 0 100px 0">
+      <progress value="0.75"></progress>
+    </div>
+
+    <style>
+      progress {
+        width: 500px;
+        height: 30px;
+        margin: auto;
+        display: block;
+        appearance: none;
+      }
+      progress::-webkit-progress-bar {
+        appearance: none;
+        background-color: rgb(0, 0, 0);
+        block-size: 100%;
+        inline-size: 100%;
+        box-sizing: border-box;
+        border-radius: 50px;
+        -webkit-user-modify: read-only !important;
+      }
+
+      progress::-webkit-progress-value {
+        appearance: none;
+        background-color: red;
+        border-radius: 50px 0 0 50px;
+      }
+    </style>
+
+    <!---상품리스트-->
+    <div class="products-bg">
+      <div class="products-container">
+        <div class="product-item">
+          <div class="product-hover-wrap">
+            <div class="product-hover"><span>$50</span></div>
+          </div>
+          <img src="./img/product1-1.jpg" />
+        </div>
+        <div class="product-item">
+          <div class="product-hover-wrap">
+            <div class="product-hover"><span>$70</span></div>
+          </div>
+          <img src="./img/product2.jpg" />
+        </div>
+        <div class="product-item">
+          <div class="product-hover-wrap">
+            <div class="product-hover"><span>$30</span></div>
+          </div>
+          <img src="./img/product3.jpg" />
+        </div>
+      </div>
+    </div>
+    <!---상품리스트-->
+
+    <!---form start-->
+    <div class="form-background">
+      <div class="form-box">
+        <form action="">
+          <div class="w-100">
+            <h3>Contact US</h3>
+            <p>Your E-mail</p>
+            <input
+              class="form-input"
+              type="email"
+              placeholder="email@google.com"
+            />
+          </div>
+          <div class="w-50">
+            <p>First Name</p>
+            <input type="text" class="form-input" />
+          </div>
+          <div class="w-50">
+            <p>Last Name</p>
+            <input type="text" class="form-input" />
+          </div>
+          <div style="clear: both"></div>
+          <div class="w-100">
+            <p>Message</p>
+            <textarea rows="10" class="form-input"></textarea>
+          </div>
+          <div class="w-50">
+            <input type="checkbox" id="sub" /><label for="sub">Subscribe</label>
+          </div>
+          <div class="w-50">
+            <button
+              type="submit"
+              style="
+                float: right;
+                padding: 10px;
+                width: 100px;
+                background-color: orange;
+                border: none;
+                border-radius: 10px;
+              "
+            >
+              SEND
+            </button>
+          </div>
+          <div style="clear: both"></div>
+        </form>
+      </div>
+    </div>
+    <!---form end-->
+  </body>
+</html>

@@ -1,0 +1,29 @@
+.profile {
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.text {
+  text-align: center;
+}
+.textName {
+  text-align: center;
+  size: 16px;
+  margin-bottom: -10px;
+}
+.textBold {
+  color: rgb(255, 128, 1);
+  font-weight: bolder;
+}
+.textBox {
+  padding: 30px;
+  background-color: cornsilk;
+  width: 400px;
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px #cecece;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 500px 500px;
+        padding: 0;
+      }
+
+      .wrap {
+        scale: 0.5;
+        position: fixed;
+        width: 0px;
+        height: 0px;
+        border-radius: 50%;
+        animation: rotate 2.5s linear infinite;
+      }
+      .wrap:nth-child(2) {
+        border-radius: 50%;
+        animation: rotate 2.5s 0.4s linear infinite;
+      }
+      .wrap:nth-child(3) {
+        border-radius: 50%;
+        animation: rotate 2.5s 0.8s linear infinite;
+      }
+      .wrap:nth-child(4) {
+        border-radius: 50%;
+        animation: rotate 2.5s 0.12s linear infinite;
+      }
+      .circle {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background-color: rgba(123, 123, 123, 0);
+        border-radius: 50%;
+        animation: circle-move-up-down 1s infinite;
+      }
+      .circle:nth-child(2) {
+        left: 30px;
+        animation-delay: 0.1s;
+      }
+      .circle:nth-child(3) {
+        left: 60px;
+        animation-delay: 0.2s;
+      }
+      .circle:nth-child(4) {
+        left: 90px;
+        animation-delay: 0.3s;
+      }
+      .circle:nth-child(5) {
+        left: 120px;
+        animation-delay: 0.4s;
+      }
+      .circle:nth-child(6) {
+        left: 150px;
+        animation-delay: 0.5s;
+      }
+      .circle:nth-child(7) {
+        left: 180px;
+        animation-delay: 0.6s;
+      }
+      .circle:nth-child(8) {
+        left: 210px;
+        animation-delay: 0.7s;
+      }
+      .circle:nth-child(9) {
+        left: 240px;
+        animation-delay: 0.8s;
+      }
+      .circle:nth-child(10) {
+        left: 270px;
+        animation-delay: 0.9s;
+      }
+      @keyframes circle-move-up-down {
+        0% {
+          transform: translate(0, 0);
+        }
+
+        50% {
+          transform: translate(0px, 50px) scale(2);
+          background-color: rgba(138, 138, 138, 0.564);
+        }
+
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+      @keyframes rotate {
+        0% {
+          rotate: -180deg;
+        }
+        /* 50% {
+          rotate: 0deg;
+        } */
+        100% {
+          rotate: 180deg;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <div class="wrap">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <div class="wrap">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <div class="wrap">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="/index.css" /> -->
+    <title>Document</title>
+    <style>
+      .container {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .left {
+        width: 80%;
+        height: 300px;
+        /* background-color: blue; */
+        float: left;
+      }
+      .topBox {
+        padding: 20px;
+        width: 100%;
+        /* background-color: rgba(137, 43, 226, 0.578); */
+        float: left;
+      }
+      .bottomBox {
+        width: 100%;
+        clear: both;
+        padding: 10px;
+      }
+      .right {
+        width: 20%;
+        /* height: 300px; */
+        /* background-color: bisque; */
+        float: left;
+      }
+      nav {
+        width: 800px;
+      }
+      nav li {
+        display: inline-block;
+        width: 100px;
+        background-color: #eee;
+        text-align: center;
+        padding: 10px;
+        margin-right: 10px;
+      }
+      nav a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Price</a></li>
+          <li><a href="#">QnA</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="left">
+        <div class="topBox">
+          <div>
+            <img
+              src="./lion.png"
+              style="width: 50px; float: left; margin-right: 10px"
+            />
+          </div>
+          <div>조동우</div>
+          <div>1시간전</div>
+        </div>
+        <div class="bottomBox">
+          <div>4k 디스플레이 어쩌구 저쩌구...</div>
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, nisi
+            autem corrupti laudantium reprehenderit ratione, expedita,
+            aspernatur culpa harum minus hic! Et voluptatum asperiores ullam
+            natus delectus consequatur quo quibusdam!
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <img src="./lion.png" style="width: 160px" />
+      </div>
+    </div>
+  </body>
+</html>
