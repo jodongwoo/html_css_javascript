@@ -15,7 +15,7 @@ document.querySelector('.test').addEventListener('click', function () {
             <div class="product_price_wrap">
                 <span>Price : $ </span><span class="product_price">${a[i].price}</span>
             </div>
-            <button class="buy_bt">Buyyyyyyyy</button>`;
+            <button class="buy_bt">Buy</button>`;
         });
     });
   });
