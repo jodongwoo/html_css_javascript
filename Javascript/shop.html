@@ -3,24 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
     <title>Javascript Shop</title>
   </head>
 
   <style>
     body {
       background-color: rgb(80, 80, 80);
-      margin: 0;
-      padding: 20px;
+      padding: 10px;
+      margin: auto;
     }
     .container {
-      width: 80%;
+      width: 90%;
       margin: auto;
     }
 
     .nav {
       background-color: rgb(46, 40, 62);
       width: 100%;
-      padding: 20px;
+      /* padding: 20px; */
     }
     .logo {
       color: white;
@@ -30,10 +35,12 @@
     }
     .logo img {
       width: 30px;
+      margin: 10px;
     }
 
     .menu {
       float: right;
+      margin: 10px;
     }
     .menu ul {
       color: white;
@@ -47,26 +54,35 @@
     }
     .main {
       width: 100%;
-      padding: 20px;
+      padding: 10px 0;
       background-color: rgba(255, 255, 255, 0.412);
     }
     .product_container {
       display: flex;
+      margin: 0 20px 20px 20px;
     }
     .product_card {
       border-radius: 10px;
       width: 25%;
       margin: 10px;
-      padding: 20px;
+      padding: 10px;
       background-color: white;
     }
+
     .product_card img {
       width: 100%;
     }
 
     .product_name {
+      text-align: center;
       font-size: 16px;
       font-weight: 600;
+    }
+    .product_company_name {
+      color: rgb(17, 0, 255);
+      text-align: center;
+      margin-top: 5px;
+      font-size: 14px;
     }
     .buy_bt {
       font-size: 18px;
@@ -75,15 +91,19 @@
       width: 100%;
       color: yellow;
       background-color: rgb(43, 43, 76);
-      margin-top: 10px;
-      padding: 14px 10px;
+      margin-top: 15px;
+      padding: 7px 10px;
     }
     .product_price_wrap {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .product_price {
       color: red;
     }
     .cart_container {
       background-color: rgba(255, 255, 255, 0.412);
-      margin: 10px;
+      margin: 0 30px 20px 30px;
       border: 0;
       border-radius: 10px;
       padding: 20px;
@@ -110,8 +130,13 @@
     a:active {
       color: yellow;
     }
+
+    .searchBar {
+      margin: 0 20px 0 20px;
+    }
   </style>
   <body>
+    <button id="btbt">btbt</button>
     <div class="container">
       <div class="nav">
         <div class="logo">
@@ -121,11 +146,7 @@
               alt=""
             />
           </div>
-          <div
-            style="display: table; vertical-align: middle; padding-left: 10px"
-          >
-            Javascript Shop
-          </div>
+          <div style="margin-top: 27px; line-height: 0px">Javascript Shop</div>
         </div>
         <div class="menu">
           <ul>
@@ -142,22 +163,18 @@
           <input
             id="search_products"
             type="search"
-            style="margin: 10px; padding: 10px"
+            style="width: 50%; margin: 10px; padding: 10px"
+            placeholder="Search Product Name or Brand"
           />
         </div>
         <div class="product_container"></div>
         <div class="cart_container">
           <div class="cart_title">CART</div>
-          <div class="cart_area">Please Drag Products</div>
+          <div class="cart_area">Drag Here</div>
         </div>
       </div>
       <!-- end main -->
     </div>
     <script src="./shop.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.js"
-      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>

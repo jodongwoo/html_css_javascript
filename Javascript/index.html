@@ -1,601 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>Document</title>
-  </head>
-  <style>
-    body {
-      position: relative;
-    }
 
-    h3 {
-      font-size: 20px;
-    }
-
-    p {
-      font-size: 14px;
-    }
-
-    .list-group {
-      position: absolute;
-      width: 100%;
-      visibility: hidden;
-      opacity: 0;
-      transition: all 0.5s;
-    }
-    .container-box {
-      width: 100vw;
-      height: 100vh;
-      background-color: #0000003c;
-      position: absolute;
-      z-index: 5;
-      box-shadow: 0px 0px 5px #444;
-      visibility: hidden;
-      opacity: 0;
-      transition: all 0.5s;
-    }
-    .alert {
-      background-color: white;
-      width: 300px;
-      position: relative;
-      top: 7%;
-      margin: auto;
-    }
-
-    .alert i {
-      color: #8d8b8d;
-      position: absolute;
-      top: 15px;
-      right: 10px;
-    }
-
-    .bt-01 {
-      background-color: #6d747d;
-      border: 0;
-      border-radius: 3px;
-      color: white;
-      padding: 5px 10px;
-      font-size: 14px;
-      width: 100%;
-      margin-top: 10px;
-      height: 40px;
-    }
-    .bt-02 {
-      background-color: #116dff;
-      border: 0;
-      border-radius: 3px;
-      color: white;
-      padding: 5px 10px;
-      font-size: 14px;
-      height: 40px;
-      width: 100%;
-    }
-    .bt-03 {
-      background-color: #ff1190;
-      border: 0;
-      border-radius: 3px;
-      color: white;
-      padding: 5px 10px;
-      font-size: 14px;
-      width: 100px;
-      height: 40px;
-    }
-
-    .show {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    form {
-      padding: 10px;
-    }
-    input {
-      margin: 0 10px;
-      margin: 5px 0;
-      font-size: 14px;
-      padding: 7px 5px;
-      border-radius: 4px;
-      border: 1px solid #777777;
-      box-sizing: border-box;
-    }
-
-    .navbar {
-      position: fixed;
-      width: 100%;
-      z-index: 5;
-    }
-
-    .navbar-brand {
-      font-size: 30px;
-      line-height: 0;
-      transition: all 0.5s;
-      margin-top: -10px;
-    }
-    .scrollReadPercent_Contaoner {
-      position: fixed;
-      width: 100%;
-      background-color: #ffffff;
-      top: 55px;
-      z-index: 100;
-    }
-    .scrollReadPercent {
-      background-color: #ff1190;
-      height: 2px;
-      width: 0;
-    }
-  </style>
-  <body>
-    <div class="container-box">
-      <div class="alert ani-01">
-        <h3 style="margin-left: 10px; margin-bottom: -5px; font-weight: 700">
-          Login
-        </h3>
-
-        <a href="#"><i class="fa-solid fa-x fa-sm"></i></a>
-        <form id="form" action="./success.html">
-          <div style="display: flex; flex-direction: column">
-            <input
-              id="loginId"
-              type="text"
-              placeholder="이메일 주소를 입력하세요"
-            />
-            <input
-              id="loginPassWord"
-              type="password"
-              placeholder="비밀번호를 입력하세요"
-            />
-          </div>
-          <p
-            id="passwordErrorMessge"
-            style="color: red; text-align: center"
-          ></p>
-          <div style="text-align: center; margin-top: 10px">
-            <button type="submit" class="bt-02">Login</button>
-            <button type="reset" class="bt-01">Close</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="scrollReadPercent_Contaoner">
-      <div class="scrollReadPercent"></div>
-    </div>
-    <nav class="navbar navbar-light bg-light">
-      <div class="container-fluid">
-        <span class="navbar-brand">Logo</span>
-        <button class="navbar-toggler" type="button">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </nav>
-
-    <ul class="list-group">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-      <li class="list-group-item">A fourth item</li>
-      <li class="list-group-item">And a fifth one</li>
-    </ul>
-
-    <div style="text-align: center">
-      <button class="bt-03" style="margin-top: 250px">Log-In</button>
-    </div>
-
-    <div style="margin: 20px; height: 10000px">
-      <div
-        class="lorem"
-        style="
-          overflow-y: scroll;
-          width: 100%;
-          height: 200px;
-          padding: 15px;
-          border: 1px solid #d3d3d3;
-        "
-      >
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident sed,
-        natus, quo reiciendis, aliquid voluptas quidem incidunt molestias illo
-        alias suscipit repellat totam quod amet illum ipsum eum ea doloremque.
-        Voluptate vero quibusdam natus exercitationem nisi atque, maxime odit
-        dicta beatae sunt nesciunt magni labore error assumenda provident modi
-        architecto, vel quo deserunt tempora cum ad obcaecati. Enim, eum fugiat!
-        Cum corrupti asperiores impedit repudiandae! Deleniti, cumque asperiores
-        quas molestiae vero, amet sit dicta cupiditate repudiandae ipsum rerum
-        accusamus. Debitis, vel corporis. Expedita at aliquid quisquam suscipit
-        repellat molestiae inventore?Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Provident sed, natus, quo reiciendis, aliquid voluptas
-        quidem incidunt molestias illo alias suscipit repellat totam quod amet
-        illum ipsum eum ea doloremque. Voluptate vero quibusdam natus
-        exercitationem nisi atque, maxime odit dicta beatae sunt nesciunt magni
-        labore error assumenda provident modi architecto, vel quo deserunt
-        tempora cum ad obcaecati. Enim, eum fugiat! Cum corrupti asperiores
-        impedit repudiandae! Deleniti, cumque asperiores quas molestiae vero,
-        amet sit dicta cupiditate repudiandae ipsum rerum accusamus. Debitis,
-        vel corporis. Expedita at aliquid quisquam suscipit repellat molestiae
-        inventore?Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Provident sed, natus, quo reiciendis, aliquid voluptas quidem incidunt
-        molestias illo alias suscipit repellat totam quod amet illum ipsum eum
-        ea doloremque. Voluptate vero quibusdam natus exercitationem nisi atque,
-        maxime odit dicta beatae sunt nesciunt magni labore error assumenda
-        provident modi architecto, vel quo deserunt tempora cum ad obcaecati.
-        Enim, eum fugiat! Cum corrupti asperiores impedit repudiandae! Deleniti,
-        cumque asperiores quas molestiae vero, amet sit dicta cupiditate
-        repudiandae ipsum rerum accusamus. Debitis, vel corporis. Expedita at
-        aliquid quisquam suscipit repellat molestiae inventore?
-      </div>
-    </div>
-
+<html>
+<head>
+    <title>eveningHighlightSearch - Using JavaScript to Search For and Highlight Text on a Web Page</title>
     <style>
-      .carousel_wrap {
-        margin-top: 50px;
-        width: 100%;
-        height: 400px;
-        display: flex;
-        overflow: hidden;
-        position: relative;
-      }
-      .carousel_img_wrap {
-        height: 100%;
-        display: flex;
-        position: absolute;
-        transition: all 0.5s;
-        left: 0;
-      }
-
-      .carousel_img {
-        width: 100%;
-        height: 100%;
-      }
-
-      .carousel_img img {
-        width: 100%;
-        height: 100%;
-      }
-
-      .carousel_nav_button {
-        display: flex;
-        margin: 10px;
-      }
-      .carousel_nav_button button {
-        width: 50px;
-        height: 50px;
-        background-color: #444;
-        color: white;
-
-        margin-right: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .carousel_nav {
-        width: 100vw;
-        height: 100%;
-        padding: 0;
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 3;
-      }
-      #ani_bt_pre {
-        border: 0;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.44);
-        color: white;
-      }
-      #ani_bt_next {
-        border: 0;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.44);
-        color: white;
-      }
+    .matched1 {
+        color: #eee;
+        background-color: #39f;
+    }
+    .matched2 {
+        color: #300;
+        background-color: #cdf;
+    }
+    .matched3 {
+        color: #000;
+        background-color: #ccc;
+    }
+    .matched4 {
+        color: #444;
+        background-color: #96e;
+    }
+    .matched {}
     </style>
+    <script>
+        var findWord;
+        var originSource;
+        
+        function saveOriginSource(){
+            originSource = document.body.innerHTML;
+        }
+            
+        function startSearch(){
+            if(document.getElementById("findKey").value && document.getElementById("findKey").value.length > 1){
+                resetSearch();
+                findWord = document.getElementById("findKey").value;
+                repeater(document.body);
+            }
+        }
+        function keyEvent(e){
+            if(e.keyCode == 13) startSearch();
+        }
+        function repeater(ele){
+            analyzeElement(ele);
+            
+            var cloneArray = [];
+            if(ele.childNodes.length > 0){
+                for(var i= 0 ; i < ele.childNodes.length; i++){//because childNodes list changed dynamically by remove or append.
+                    cloneArray.push(ele.childNodes[i]);
+                }
+                for(var i= 0 ; i < cloneArray.length; i++){
+                    repeater(cloneArray[i]);
+                }
+            }
+        }
+        function analyzeElement(ele){
+            if(ele.nodeType == 3){
+                if (ele.parentNode){
+                    var highlightElement = document.createElement("span");
+                    highlightElement.setAttribute("class", "matched");
+                    
+                    var matchedValue = matchLevel_1(ele.textContent, findWord, "matched1");
+                    if(matchedValue){
+                        highlightElement.innerHTML = matchedValue;
+                    
+                        ele.parentNode.insertBefore(highlightElement, ele);
+                        ele.parentNode.removeChild(ele);
+                    }else{
+                        matchedValue = matchLevel_2(ele.textContent, findWord, "matched2");
+                        if(matchedValue){
+                            highlightElement.innerHTML = matchedValue;
+                        
+                            ele.parentNode.insertBefore(highlightElement, ele);
+                            ele.parentNode.removeChild(ele);
+                        }else{
+                            matchedValue = matchLevel_3(ele.textContent, findWord, "matched3");
+                            if(matchedValue){
+                                highlightElement.innerHTML = matchedValue;
+                            
+                                ele.parentNode.insertBefore(highlightElement, ele);
+                                ele.parentNode.removeChild(ele);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        ////////////////////////////////////////////////Match Logic Level - START////////////////////////////////////////////
+        function matchLevel_1(sourceText, searchText, styleName){
+            var css = styleName;
+            var newSource = false;
+            function attachEffect(matched){
+                return "<span class='" + css + "'>" + matched + "</span>";
+            }
+            searchText = preFilter(searchText);
+            searchText = new RegExp(searchText, "g");// Valid [Web Page], invalid [web page] : This is a Web Page for ...
+            if(searchText.test(sourceText))
+                newSource = sourceText.replace(searchText, attachEffect);
+            return newSource;
+        }
+        function matchLevel_2(sourceText, searchText, styleName){
+            var css = styleName;
+            var newSource = false;
+            function attachEffect(matched){
+                return "<span class='" + css + "'>" + matched + "</span>";
+            }
+            searchText = preFilter(searchText);
+            searchText = new RegExp(searchText, "gi");// Valid [Web Page][web Page][web page][WEb PaGe] etc : This is a Web Page for ...
+            if(searchText.test(sourceText))
+                newSource = sourceText.replace(searchText, attachEffect);
+            return newSource;
+        }
+        function matchLevel_3(sourceText, searchText, styleName){
+            var splitArr = searchText.split(" ");
+            var css = styleName;
+            var newSource = false;
+            var tmpSource = sourceText;
+            for(var i = 0; i < splitArr.length; i++){
+                if(splitArr[i] != "" && splitArr[i].length > 1){
+                    if(matchLevel_3_(tmpSource, splitArr[i], css)){
+                        newSource = matchLevel_3_(tmpSource, splitArr[i], css);
+                        tmpSource = newSource;
+                    }
+                }
+            }
+            return newSource;
+        }
+        function matchLevel_3_(sourceText, searchText, styleName){
+            var css = styleName;
+            var newSource = false;
+            function attachEffect(matched){
+                return "<span class='" + css + "'>" + matched + "</span>";
+            }
+            searchText = preFilter(searchText);
+            searchText = new RegExp(searchText, "gi");// Valid [Web Page][web Page][web page][WEb PaGe] etc : This is a Web Page for ...
+            if(searchText.test(sourceText))
+                newSource = sourceText.replace(searchText, attachEffect);
+            return newSource;
+        }
+        function attachEffect(matched, effectCSS){
+            return "<span class=" + effectCSS + ">" + matched + "</span>";
+        }
+        function preFilter(txt){
+            //return txt.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+            return txt.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+        }
+        ////////////////////////////////////////////////Match Logic Level - END////////////////////////////////////////////
+        
+        /*
+         * Reset Logic - START
+         */
+        function resetSearch(){       
+            repeatResetFunction(document.body);
+        }
+        function repeatResetFunction(ele){
+            analyzeResetElement(ele);
+            
+            var cloneArray = [];
+            if(ele.childNodes.length > 0){
+                for(var i= 0 ; i < ele.childNodes.length; i++){
+                    //cloneArray.push(ele.childNodes[i]);
+                    repeatResetFunction(ele.childNodes[i]);
+                }
+                /*
+                for(var i= 0 ; i < cloneArray.length; i++){
+                    repeatResetFunction(cloneArray[i]);
+                }
+                */
+            }
+        }
+        function analyzeResetElement(ele){
+            if(ele.nodeType == 1 && ele.nodeName.toLowerCase() == "span"){
+                if(ele.getAttribute("class")){
+                    if(ele.getAttribute("class") == "matched" && ele.hasChildNodes()){
+                        replaceResetElement(ele);
+                    }
+                }
+            }
+        }
+        function replaceResetElement(ele){
+            var sourceTxt = ele.textContent;
+            var parent = ele.parentNode;
+            var newTxtNode = document.createTextNode(sourceTxt);
+            
+            parent.insertBefore(newTxtNode, ele);
+            parent.removeChild(ele);
+        }
+    </script>
+</head>
 
-    <div class="carousel_wrap">
-      <div class="carousel_nav">
-        <div style="width: 10vw; height: 100%">
-          <button id="ani_bt_pre" type="button"><-Pre</button>
-        </div>
-        <div style="width: 80vw"></div>
-        <div style="width: 10vw; text-align: right; height: 100%">
-          <button id="ani_bt_next" type="button">Next-></button>
-        </div>
-      </div>
-      <div class="carousel_img_wrap">
-        <div class="carousel_img"><img src="car1.png" /></div>
-        <div class="carousel_img"><img src="car2.png" /></div>
-        <div class="carousel_img"><img src="car3.png" /></div>
-        <div class="carousel_img"><img src="car3.png" /></div>
-        <div class="carousel_img"><img src="car3.png" /></div>
-      </div>
+<body onload="saveOriginSource()">
+    <a href="mailto:splitedragon" style="position:absolute;right:10px;width:280px;height:80px;cursor:pointer;top:0px;">Email: splitedragon@hotmail.com</a>
+    <center>
+    <h2>자바스크립트로 ctrl+F기능과 유사한 웹페이지내 문자검색기능 작성</h2>
+    <h3>현재 여러분께 보여지는 웹브라우저 내용의 임의의 문자를 입력하고 엔터건 누르면 그 검색어가 있는곳을 바로 찾아줍니다. (검색예: web page)</h3>
+    <input type="txt" id="findKey" onkeypress="keyEvent(event)">
+    <input type="button" value="검색" onclick="startSearch()">
+    <input type="button" value="재설정" onclick="document.getElementById('findKey').value='';resetSearch()">
+    <input type="button" value="원상복귀" onclick="document.body.innerHTML = originSource;">
+    </center>
+    <div>
+        <!-- 이부분은 검색하지 않게"pl&lt;highlightStartTag&gt;ant&lt;highlightEndTag&gt;")&\/';"-->
+    <p>
+        <!--this is< special> 'character'-->
+    </p>
+    <p><span>
+        <h3>하이라이트 검색기능</h3>
+    </span></p>
     </div>
-    <div class="carousel_nav_button">
-      <button id="ani_bt_01" type="button">1</button>
-      <button id="ani_bt_02" type="button">2</button>
-      <button id="ani_bt_03" type="button">3</button>
+    
+    <p id="ppp"></p>
+    <div id="dddd">
+    <ul class="level-1">
+      <li class="item-i">Node.textContent 의 값을 가지고 검색</li>
+      <li class="item-ii">지원하는 웹브라우저: IE9,10/FF/Chrome/Opera/Safari(Win,MAC,iOS)
+      <li class="item-ii">검색은 ie, sp, high와 같이 검색글자길이가 2이상부터 가능</li>
+      <li class="item-iii">
+        검색은 대소문자구별에 따라 완전일치, 대소문자구분없이 검색, 여러개의 단어결합검색 등으로 진행, 검색글자 Web Page에 관하여"
+        <ul class="level-1">
+            <li class="item-i"><h4>[검색-1] 완전일치</h4>
+            <p>검색된 글자의 배경색 : <span style="background-color: #39f;color:#eee;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+            검색성공 : [Web Page]<br>검색 실패 [web page][wEB Page]</p>
+            </li>
+            <li class="item-i"><h4>[검색-2] 대소문자구분없음</h4>
+            <p>검색된 글자의 배경색 : <span style="background-color: #cdf;color:#300;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+            검색성공 : [Web Page][web page][wEb pAGe] 등<br>검색실패: [web javascript][JavaScript highlight]</p>
+            </li>
+            <li class="item-i"><h4>[검색-3] 여러개 검색단어에 의한 검색</h4>
+            <p>검색된 글자의 배경색 : <span style="background-color: #ccc;color:#000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+            Possible : [web javascript][JavaScript highlight IE]</p>
+            </li>
+        </ul>
+      </li>
+    </ul>
     </div>
-
-    <script>
-      document
-        .querySelector('.container-box')
-        .addEventListener('click', function (e) {
-          if (e.target == document.querySelector('.container-box')) {
-            document.querySelector('.container-box').classList.remove('show');
-          }
-        });
-
-      // IMG animation
-      var clicki = 1;
-
-      document
-        .querySelector('#ani_bt_01')
-        .addEventListener('click', function () {
-          document.querySelector('.carousel_img_wrap').style.transform =
-            'translateX(0vw)';
-          clicki = 1;
-        });
-
-      document
-        .querySelector('#ani_bt_02')
-        .addEventListener('click', function () {
-          document.querySelector('.carousel_img_wrap').style.transform =
-            'translateX(-100vw)';
-          clicki = 2;
-        });
-
-      document
-        .querySelector('#ani_bt_03')
-        .addEventListener('click', function () {
-          document.querySelector('.carousel_img_wrap').style.transform =
-            'translateX(-200vw)';
-          clicki = 3;
-        });
-
-      //
-
-      //
-
-      // 이지미 개수 계산기
-      var photoNum = document.getElementsByClassName('carousel_img').length;
-      console.log(photoNum);
-
-      // 이지미 컨테이너 넓이 자동 계산기
-      document.querySelector('.carousel_img_wrap').style.width =
-        photoNum * 100 + 'vw';
-
-      //   Next 버튼 시작
-      document
-        .querySelector('#ani_bt_next')
-        .addEventListener('click', function () {
-          if (clicki < photoNum) {
-            document.querySelector('.carousel_img_wrap').style.transform =
-              'translateX(-' + clicki + '00vw)';
-            clicki += 1;
-            console.log('-' + clicki + '00vw');
-          } else if (clicki == photoNum) {
-            clicki = 0;
-            document.querySelector('.carousel_img_wrap').style.transform =
-              'translateX(-' + clicki + '00vw)';
-            console.log('-' + clicki + '00vw');
-            clicki += 1;
-          }
-        });
-      //
-      //
-
-      // document
-      //   .querySelector('#ani_bt_pre')
-      //   .addEventListener('click', function () {
-      //     if (clicki <= photoNum) {
-      //       clicki -= 1;
-      //       document.querySelector('.carousel_img_wrap').style.transform =
-      //         'translateX(-' + clicki + '00vw)';
-
-      //       console.log('-a' + clicki + '00vw');
-      //     }
-
-      //     if (clicki == 0) {
-      //       clicki = 0;
-      //       document.querySelector('.carousel_img_wrap').style.transform =
-      //         'translateX(-' + clicki + '00vw)';
-      //       console.log('-' + clicki + '00vw');
-      //       clicki += 1;
-      //     }
-      //   });
-      // //
-      // //
-      //
-      //
-      //
-      ////  자동 슬라이드 끝
-
-      // IMG animation
-
-      // 상단메뉴 토글
-      document
-        .querySelector('.navbar-toggler')
-        .addEventListener('click', function () {
-          document.querySelector('.list-group').classList.toggle('show');
-        });
-      // close alert window toggle
-      document.querySelector('.bt-01').addEventListener('click', function () {
-        document.querySelector('.container-box').classList.toggle('show');
-      });
-      // close alert window toggle
-      document.querySelector('.bt-02').addEventListener('click', function () {
-        document.querySelector('.container-box').classList.toggle('show');
-      });
-      // Login toggle
-      document.querySelector('.bt-03').addEventListener('click', function () {
-        document.querySelector('.container-box').classList.toggle('show');
-      });
-      // alert window X toggle
-      document
-        .querySelector('.fa-solid')
-        .addEventListener('click', function () {
-          document.querySelector('.container-box').classList.toggle('show');
-        });
-
-      // 변수지정
-      var indexForm = document.getElementById('form');
-      //아이디 체크
-      indexForm.addEventListener('submit', function (e) {
-        if (document.getElementById('loginId').value == '') {
-          alert('이메일을 입력하세요!!');
-          e.preventDefault();
-        }
-      });
-
-      indexForm.addEventListener('submit', function (e) {
-        if (document.getElementById('loginPassWord').value == '') {
-          alert('패스워드를 입력하세요.');
-          e.preventDefault();
-        }
-      });
-
-      //
-      //
-      //
-      //
-
-      indexForm.addEventListener('submit', function (e) {
-        var emailAddress = document.getElementById('loginId').value;
-        if (/\S+@\S+\.\S+/.test(emailAddress) == false) {
-          alert('이메일 형식이 아닙니다.');
-          e.preventDefault();
-        }
-        //  else {
-        //   alert('이메일 형식이 아닙니다.');
-        //   e.preventDefault();
-        // }
-      });
-
-      indexForm.addEventListener('input', function (e) {
-        var passwordChecker = document.getElementById('loginPassWord').value;
-        if (/[A-Z]/.test(passwordChecker) == false) {
-          document.getElementById('passwordErrorMessge').innerHTML =
-            '대문자가 없습니다.';
-          // alert('비밀번호에 대문자가 없습니다.');
-          e.preventDefault();
-        }
-      });
-
-      //
-      //
-      //
-
-      document.getElementById('form').addEventListener('submit', function (e) {
-        if (document.getElementById('loginPassWord').value.length < 6) {
-          alert('패스워드가 너무 짧습니다.\n6자리 이상으로 기입해 주세요.');
-          e.preventDefault();
-        }
-      });
-
-      document
-        .getElementById('loginPassWord')
-        .addEventListener('input', function () {
-          if (document.getElementById('loginPassWord').value.length < 6) {
-            document.getElementById('passwordErrorMessge').innerHTML =
-              '비밀번호가 짧습니다.';
-          } else {
-            document.getElementById('passwordErrorMessge').innerHTML = '';
-          }
-        });
-      //
-      //
-      //
-      //
-      //navbar-brand
-
-      //
-      //
-      //
-      //
-
-      // function SecondToMs(a, b) {
-      //   var result = (a * 60 + b) * 1000;
-      //   return result;
-      // }
-      // console.log(SecondToMs(1, 30));
-
-      // function discount(c, d) {
-      //   var money = c - c / 10;
-      //   if (d == true) {
-      //     money = money - 1.5;
-      //   }
-      //   return parseFloat(money).toFixed(2);
-      //   // return money;
-      // }
-
-      // console.log(discount(0.7777777777, true));
-    </script>
-    <script>
-      // 스크롤양 583.3333129882812 박스사이즈1830  실제높이1247
-      // 스크롤양 0                 박스사이즈1830  실제높이1247
-      // 스크롤양 9583.3330078125   박스사이즈10830 실제높이1247
-      //
-      //
-      // scrollyang / (scrollBoxSize - realHeight)*100
-      //
-      //
-      window.addEventListener('scroll', function () {
-        var scrollyang = window.scrollY;
-        var scrollBoxSize = document.querySelector('html').scrollHeight;
-        var realHeight = document.querySelector('html').clientHeight;
-
-        var scrollReadBarWidth = (
-          (scrollyang / (scrollBoxSize - realHeight)) *
-          100
-        ).toFixed(0);
-        console.log(scrollReadBarWidth);
-        if (scrollReadBarWidth > 1) {
-          document.querySelector('.scrollReadPercent').style.width =
-            scrollReadBarWidth + '%';
-        }
-        if (scrollReadBarWidth == 1) {
-          document.querySelector('.scrollReadPercent').style.width = '0%';
-        }
-      });
-    </script>
-    <script>
-      document.querySelector('.lorem').addEventListener('scroll', function () {
-        var 스크롤양 = document.querySelector('.lorem').scrollTop;
-        var 박스사이즈 = document.querySelector('.lorem').scrollHeight;
-        var 실제높이 = document.querySelector('.lorem').clientHeight;
-
-        var 최종값 = 박스사이즈.toFixed(0) - 실제높이.toFixed(0) - 5;
-
-        if (스크롤양 >= 최종값) {
-          alert('모두 읽으셨네요~!!');
-        }
-        // 503.3333435058594 702 199
-
-        // console.log(스크롤양, 박스사이즈, 실제높이);
-      });
-
-      window.addEventListener('scroll', function () {
-        var yyy = window.scrollY;
-        // console.log(yyy);
-        if (yyy >= 100) {
-          document.querySelector('.navbar-brand').style.fontSize = '20px';
-          document.querySelector('.navbar-brand').style.marginTop = '0px';
-        } else {
-          document.querySelector('.navbar-brand').style.fontSize = '30px';
-          document.querySelector('.navbar-brand').style.marginTop = '-10px';
-        }
-      });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+    <hr>
+    <center>Contact to me <a href='mailto:splitedragon@hotmail.com'>splitedragon@hotmail.com</a>        
+    <br>
+    Skype: splitedragon
+    <br>
+    website: 
+    http://goodhow.com:8096/</center>
+</body>
 </html>
