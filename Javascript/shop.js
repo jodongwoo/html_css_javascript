@@ -1,165 +1,147 @@
-var arr_products = [];
+var products = [];
 var cart = [];
-var add_qty = [];
-var bt_id;
-var qty;
-function 찾아줘(c, d) {
-  c.indexOf(d);
-}
+$.get('./sauce/store.json').done(function (data) {
+  products = data.products;
 
-window.addEventListener('load', function (e) {
-  $.get('./sauce/store.json').done((data_p) => {
-    // data = JSON.parse(data_p);
-    var click_i = 0;
-    arr_products = data_p.products;
-
-    arr_products.forEach((a, i) => {
-      //
-      // console.log(arr_products);
-      document.querySelector('.product_container').insertAdjacentHTML(
-        'beforeend',
-        `<div class="product_card" data-id=${a.id}>
+  products.forEach(function (a, i) {
+    document.querySelector('.product_container').insertAdjacentHTML(
+      'beforeend',
+      `<div class="product_card" style="width:20%" data-id=${a.id}>
         <div class="product_img"><img src="${a.photo}" alt=""></div>
-        <div class="product_name">${a.title}</div>
+        <div class="product_name" style="color:black">${a.title}</div>
         <div class="product_company_name">${a.brand}</div>
         <div class="product_price_wrap">
-            <span>Price : </span><span class="product_price">$ ${a.price}</span>
+            <span style="color:black">Price : </span><span class="product_price">$ ${a.price}</span>
         </div>
-        <button id="bt_${i}" class="buy_bt">Cart</button>
+        <button id="${a.id}" class="buy_bt">Cart</button>
         </div>`
-      );
-
-      // document.querySelector('.cart_area').innerHTML = '';
-      // document
-      //   .getElementById(`bt_${i}`)
-      //   .addEventListener('click', function (e) {
-      //     // } else if (a.title === find_save.title) {
-      //     //   document.querySelector('.cart_area').innerHTML = '';
-      //     //   document.querySelector('.cart_area').insertAdjacentHTML(
-      //     //     'beforeend',
-      //     //     `<div class="product_card" style="width:20%" data-id=${find_save.id}>
-      //     //     <div class="product_img"><img src="${find_save.photo}" alt=""></div>
-      //     //     <div class="product_name" style="color:black">${find_save.title}</div>
-      //     //     <div class="product_company_name">${find_save.brand}</div>
-      //     //     <div class="product_price_wrap">
-      //     //         <span style="color:black">Price : </span><span class="product_price">$ ${a.price}</span>
-      //     //     </div>
-      //     //     <div style="color:black; text-align:center">Qty : ${find_save.qty}</div>
-      //     //     </div>`
-      //     //   );
-      //     // }
-      //   });
-    });
-    // console.log(a);
+    );
   });
-  //
-});
-console.log(cart);
-//
 
-// bt_id = e.detaset.id;
-$('.buy_bt').click(function (e) {
-  let product_id = e.target.dataset.id;
-  var 확인 = cart.findIndex(function (c) {
-    return c.id == product_id;
-  });
-  console.log(cart);
-  if (확인 == -1) {
-    var temp_cart = arr_products.findIndex(function (c) {
-      return c.id == product_id;
-      temp_cart.qty = 1;
-      cart.push(temp_cart);
-    });
-  } else {
-    cart[확인].qty++;
-  }
-  console.log(cart);
-});
+  // start code
+  var search_prodcuts = [];
+  var search_result = [];
+  document
+    .getElementById('search_products')
+    .addEventListener('input', function (e) {
+      // products = data.products;
 
-//
-//
-//
-// 검색 시작
+      search_prodcuts = document.querySelector('#search_products').value;
 
-document
-  .getElementById('search_products')
-  .addEventListener('input', function (e) {
-    document.querySelector('.product_container').innerHTML = '';
-    $.get('./sauce/store.json').done((data_p) => {
-      var products_search = document.getElementById('search_products').value;
-      var product_name = document.querySelector('.product_name');
-      arr_products = data_p.products;
-
-      var new_arr_products = arr_products.filter(function (test) {
+      search_result = products.filter(function (search) {
         return (
-          test.title.includes(products_search) ||
-          test.brand.includes(products_search)
+          search.title.includes(search_prodcuts) ||
+          search.brand.includes(search_prodcuts)
         );
       });
-      document.querySelector('.product_container').innerHTML = '';
-      new_arr_products.forEach(function (a) {
-        //
-        //      상품 이름, 브랜드에서 검색어와 같은 부분 yellow 를 칠하기 시작
-        //
-        var yellow_title = a.title.replace(
-          `${products_search}`,
-          `<span style="background-color:yellow">${products_search}</span>`
-        );
-        var yellow_brand = a.brand.replace(
-          `${products_search}`,
-          `<span style="background-color:yellow">${products_search}</span>`
-        );
 
+      document.querySelector('.product_container').innerHTML = '';
+
+      search_result.forEach(function (a) {
         //
-        //      상품 이름, 브랜드에서 검색어와 같은 부분 yellow 를 칠하기 끝
+        //  상품 이름, 브랜드에서 검색어와 같은 부분 yellow 를 칠하기 시작
+        // console.log(a.title);
+        // a.title.replace(
+        //   `${search_prodcuts}/g`,
+        //   `<span style="background-color:yellow;">${search_prodcuts}</span>`
+        // );
+        // a.brand.replace(
+        //   search_prodcuts,
+        //   `<span style="background-color:yellow;">${search_prodcuts}</span>`
+        // );
         //
+        //  상품 이름, 브랜드에서 검색어와 같은 부분 yellow 를 칠하기 끝
+        //
+
         //
         document.querySelector('.product_container').insertAdjacentHTML(
           'beforeend',
-          `<div id="card_${a.id}" class="product_card" data-id=${a.id}>
-              <div class="product_img"><img src="${a.photo}" alt=""></div>
-              <div class="product_name">${yellow_title}</div>
-              <div class="product_company_name">${yellow_brand}</div>
-              <div class="product_price_wrap">
-                  <span>Price : </span><span class="product_price">$ ${a.price}</span>
-              </div>
-              <button class="buy_bt">Cart</button>
-              </div>`
+          `<div class="product_card" style="width:20%" data-id=${a.id}>
+            <div class="product_img"><img src="${a.photo}" alt=""></div>
+            <div class="product_name" style="color:black">${a.title}</div>
+            <div class="product_company_name">${a.brand}</div>
+            <div class="product_price_wrap">
+                <span style="color:black">Price : </span><span class="product_price">$ ${a.price}</span>
+            </div>
+            <button id="${a.id}" class="buy_bt">Cart</button>
+            </div>`
         );
       });
     });
+
+  products.forEach(function (a, i) {
+    a.title = a.title.replace(
+      `${search_prodcuts}`,
+      `<span style="background-color:yellow;">${search_prodcuts}</span>`
+    );
+    a.brand = a.brand.replace(
+      `${search_prodcuts}`,
+      `<span style="background-color:yellow;">${search_prodcuts}</span>`
+    );
   });
-//
-// 검색 끝
-//
-//
-//
-//
-//
-//
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+  //
+  //
+  //
+  //
+  //
+  // 장바구니 담기 시작
 
-// function allowDrop(ev) {
-//   ev.preventDefault();
-// }
+  products.forEach(function (a, i) {
+    document
+      .querySelectorAll('.buy_bt')
+      [i].addEventListener('click', function (e) {
+        let productId = a.id;
 
-// function drag(ev) {
-//   ev.dataTransfer.setData('text', ev.target.id);
-// }
+        let 몇번째 = cart.findIndex((a) => {
+          return a.id == productId;
+        });
 
-// function drop(ev) {
-//   ev.preventDefault();
-//   var data = ev.dataTransfer.getData('text');
-//   ev.target.appendChild(document.getElementById(data));
-// }
+        if (몇번째 == -1) {
+          let 현재상품 = products.find((a) => {
+            return a.id == productId;
+          });
+          현재상품.count = 1;
+          cart.push(현재상품);
+
+          document.querySelector('.cart_area').insertAdjacentHTML(
+            'beforeend',
+            `<div class="product_card" style="width:20%" data-id=${a.id}>
+              <div class="product_img"><img src="${a.photo}" alt=""></div>
+              <div class="product_name" style="color:black">${a.title}</div>
+              <div class="product_company_name">${a.brand}</div>
+              <div class="product_price_wrap">
+                <span style="color:black">Price : </span><span class="product_price">$ ${a.price}</span>
+              </div>
+              <input id="qty_${a.id}" value="${a.count}" type="number" style="width: 75%; margin: 10px; padding: 10px"/>
+  
+              </div>`
+          );
+        } else {
+          cart[몇번째].count++;
+
+          document.getElementById(`qty_${a.id}`).value = a.count;
+        }
+        // 합계 구하기 시작
+        // var total_price = 0;
+        var total_price = 0;
+        cart.forEach(function (a) {
+          total_price += a.price * a.count;
+        });
+
+        document.querySelector('.total_price').innerHTML = total_price;
+      });
+  });
+
+  // 장바구니 담기 끝
+
+  // end code
+});
+
+// document.querySelector('.cart_area').addEventListener('click', function () {
+//   var ggg = document.querySelectorAll('.buy_bt')[0].innerHTML;
+
+//   console.log(ggg);
+
+//   ggg.replace('Drag', '싯싯');
+// });

@@ -111,6 +111,7 @@
     .cart_title {
       font-size: 25px;
       font-weight: 600;
+      margin-bottom: 10px;
     }
     .cart_area {
       color: white;
@@ -134,9 +135,12 @@
     .searchBar {
       margin: 0 20px 0 20px;
     }
+    .total_price_wrap {
+      margin-top: 20px;
+      color: white;
+    }
   </style>
   <body>
-    <button id="btbt">btbt</button>
     <div class="container">
       <div class="nav">
         <div class="logo">
@@ -169,11 +173,15 @@
         </div>
         <div class="product_container"></div>
         <div class="cart_container">
-          <div class="cart_title">CART</div>
-          <div class="cart_area">Drag Here</div>
+          <div class="cart_title">CART - Drag Here</div>
+          <div class="cart_area"></div>
         </div>
       </div>
       <!-- end main -->
+      <div class="total_price_wrap">
+        <div style="font-size: 25px; font-weight: 600">최종가격</div>
+        <div><span>합계 : </span><span class="total_price"></span></div>
+      </div>
     </div>
     <script src="./shop.js"></script>
   </body>
